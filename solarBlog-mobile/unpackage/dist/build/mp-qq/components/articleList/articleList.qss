@@ -1,0 +1,1 @@
+.articleList{height:100%;max-width:100%}.articleList-box{height:auto;max-width:100%;background-color:#fff;margin:30rpx;box-shadow:#fff;border-radius:20rpx}.img-box{width:100%;height:360rpx}.img{width:100%;height:100%}.tags-box{display:flex;flex-wrap:nowrap;justify-content:space-between;margin-top:10rpx}.more{margin-bottom:20rpx}

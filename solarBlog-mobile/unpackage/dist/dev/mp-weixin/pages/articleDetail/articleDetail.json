@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "文章详情",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "mp-html": "/components/mp-html/mp-html",
+    "u-divider": "/node-modules/uview-ui/components/u-divider/u-divider"
+  }
+}

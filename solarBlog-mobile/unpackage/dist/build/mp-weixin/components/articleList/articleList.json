@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "u--text": "/node-modules/uview-ui/components/u--text/u--text",
+    "u-tag": "/node-modules/uview-ui/components/u-tag/u-tag",
+    "u-loadmore": "/node-modules/uview-ui/components/u-loadmore/u-loadmore"
+  },
+  "component": true
+}

@@ -1,0 +1,1 @@
+<view class="author"><image src="{{wxUrl}}" mode data-event-opts="{{[['tap',[['handlePreView',['$0'],['wxUrl']]]]]}}" bindtap="__e"></image></view>

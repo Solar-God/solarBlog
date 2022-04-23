@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bin.mapper.SiteNavMapper">
+
+    <resultMap id="BaseResultMap" type="com.bin.dto.SiteNavDTO">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="website_name" jdbcType="VARCHAR" property="webSiteName"/>
+        <result column="website_url" jdbcType="VARCHAR" property="webSiteUrl"/>
+        <result column="website_icon" jdbcType="VARCHAR" property="webSiteIcon"/>
+        <result column="tags_id" jdbcType="INTEGER" property="tagsId"/>
+        <result column="tags_name" jdbcType="VARCHAR" property="tagsName"/>
+        <result column="website_desc" jdbcType="VARCHAR" property="webSiteDesc"/>
+        <result column="order_num" jdbcType="INTEGER" property="orderNum"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+
+    <sql id="BaseColumnList">
+        website_name,website_url,website_icon,tags_id,tags_name,website_desc,order_num,create_time,update_time
+    </sql>
+
+    <sql id="updateSiteNavCondition">
+        <if test="webSiteName != null">
+            website_name = #{webSiteName},
+        </if>
+        <if test="webSiteUrl != null">
+            website_url = #{webSiteUrl},
+        </if>
+        <if test="webSiteIcon != null">
+            website_icon = #{webSiteIcon},
+        </if>
+        <if test="tagsId != null">
+            tags_id = #{tagsId},
+        </if>
+        <if test="webSiteDesc != null">
+            website_desc = #{webSiteDesc},
+        </if>
+        <if test="orderNum != null">
+            order_num = #{orderNum},
+        </if>
+        <if test="createTime != null">
+            create_time = #{createTime},
+        </if>
+        update_time = sysdate()
+    </sql>
+
+    <sql id="BaseWhereCondition">
+        <if test="webSiteName != null and webSiteName != ''">
+            and website_name like CONCAT('%',#{webSiteName,jdbcType=VARCHAR},'%')
+        </if>
+        <if test="tagsId != null and tagsId != ''">
+            and tags_id = #{tagsId,jdbcType=INTEGER}
+        </if>
+    </sql>
+
+    <select id="inquiryAdminSiteNav" parameterType="java.util.Map" resultMap="BaseResultMap">
+        select n.id,n.website_name,n.website_url,n.website_icon,n.tags_id,t.tags_name,n.website_desc,n.order_num,n.create_time,n.update_time
+        from tb_website_nav n
+        left outer join tb_website_tags t on n.tags_id = t.id
+        <where>
+            1 = 1
+            <include refid="BaseWhereCondition"/>
+        </where>
+        order by n.tags_id,n.order_num
+        limit #{current} , #{size}
+    </select>
+
+    <select id="inquiryAdminSiteNavCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+        select count(id) from tb_website_nav
+        <where>
+            1 = 1
+            <include refid="BaseWhereCondition"/>
+        </where>
+    </select>
+
+    <insert id="saveSiteNav" parameterType="java.util.Map">
+        insert ignore into tb_website_nav
+        (website_name,website_url,website_icon,tags_id,website_desc,order_num,create_time,update_time)
+        values (#{webSiteName},#{webSiteUrl},#{webSiteIcon},#{tagsId},#{webSiteDesc},#{orderNum},sysdate(),sysdate())
+    </insert>
+
+    <update id="updateSiteNav" parameterType="java.util.Map">
+        update tb_website_nav
+        <set>
+            <include refid="updateSiteNavCondition"/>
+        </set>
+        where id = #{id}
+    </update>
+
+
+</mapper>

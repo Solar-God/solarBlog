@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "u-line": "/node-modules/uview-ui/components/u-line/u-line",
+    "u-loading-icon": "/node-modules/uview-ui/components/u-loading-icon/u-loading-icon"
+  }
+}

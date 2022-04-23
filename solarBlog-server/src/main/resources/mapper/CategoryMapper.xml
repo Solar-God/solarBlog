@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bin.mapper.CategoryMapper">
+
+
+    <select id="listCategoryDTO" resultType="com.bin.dto.CategoryDTO">
+		SELECT
+		  c.id,
+		  c.category_name,
+		  COUNT( a.id ) AS article_count
+		FROM
+		  tb_category c
+		  LEFT JOIN ( SELECT id, category_id FROM tb_article WHERE is_delete = 0 AND `status` = 1 ) a ON c.id = a.category_id
+		GROUP BY
+		  c.id
+    </select>
+
+	<select id="listCategoryBackDTO" resultType="com.bin.dto.CategoryBackDTO">
+		SELECT
+		  c.id,
+		  c.category_name,
+		  COUNT( a.id ) AS article_count,
+		  c.create_time
+		FROM
+		  tb_category c
+		  LEFT JOIN tb_article a ON c.id = a.category_id
+		<where>
+			<if test="condition.keywords != null">
+			     category_name like concat('%',#{condition.keywords},'%')
+			</if>
+		</where>
+		GROUP BY
+		  c.id
+		ORDER BY
+		  c.id DESC
+        LIMIT #{current},#{size}
+	</select>
+
+</mapper>

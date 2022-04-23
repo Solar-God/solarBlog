@@ -1,0 +1,119 @@
+{
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/articleDetail/articleDetail",
+			"style": {
+				"navigationBarTitleText": "文章详情",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/mine/index",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/mine/chat/chat",
+			"style": {
+				"navigationBarTitleText": "5G",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mine/userInfo/userInfo",
+			"style": {
+				"navigationBarTitleText": "我的资料",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mine/author/author",
+			"style": {
+				"navigationBarTitleText": "联系作者",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/mixLogin/index",
+			"style": {
+				"navigationBarTitleText": "用户登录",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mixLogin/forget/forget",
+			"style": {
+				"navigationBarTitleText": "找回密码",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mixLogin/register/register",
+			"style": {
+				"navigationBarTitleText": "注册账号",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/wxLogin/wxLogin",
+			"style": {
+				"navigationBarTitleText": "微信登录",
+				"enablePullDownRefresh": false
+
+			}
+
+		}, {
+			"path": "pages/mine/emailModel/emailModel",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "uniapp",
+		"navigationBarBackgroundColor": "#00aaff",
+		"enablePullDownRefresh": false
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#d81e06",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tabbar/home.png",
+				"selectedIconPath": "static/tabbar/home-active.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/mine/index",
+				"iconPath": "static/tabbar/mine.png",
+				"selectedIconPath": "static/tabbar/mine-active.png",
+				"text": "我的"
+			}
+		]
+	},
+	"condition": { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [{
+			"name": "", //模式名称
+			"path": "", //启动页面，必选
+			"query": "" //启动参数，在页面的onLoad函数里面得到
+		}]
+	}
+}

@@ -1,0 +1,136 @@
+# 配置端口
+server:
+  port: 3300
+  servlet:
+    session:
+      timeout: 1800
+
+# 配置mysql数据库
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://你的ip:3306/blog?serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    username: MYSQL用户名
+    password: MYSQL密码
+    hikari:
+      minimum-idle: 5
+      # 空闲连接存活最大时间，默认600000（10分钟）
+      idle-timeout: 180000
+      # 连接池最大连接数，默认是10
+      maximum-pool-size: 10
+      # 此属性控制从池返回的连接的默认自动提交行为,默认值：true
+      auto-commit: true
+      # 连接池名称
+      pool-name: MyHikariCP
+      # 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+      max-lifetime: 1800000
+      # 数据库连接超时时间,默认30秒，即30000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+# redis配置
+  redis:
+    host: 你的ip
+    port: 6379
+    password: Redis密码
+# mq配置
+  rabbitmq:
+    host: 你的ip
+    port: 5672
+    username: rabbitmq用户名
+    password: rabbitmq密码
+    listener:
+      simple:
+        retry:
+          enabled: true
+          max-attempts: 3 #最大重试次数
+          initial-interval: 3000 #重试间隔时间（单位毫秒）
+#  es配置 若搜索模式为mysql，所以注释掉
+  elasticsearch:
+    rest:
+      uris: 你的IP:9200
+# 邮箱配置:邮箱账号+密钥
+  mail:
+    host: smtp.qq.com
+    username: 邮箱用户名
+    password: 邮箱授权码
+    default-encoding: UTF-8
+    port: 587
+    properties:
+      mail:
+      smtp:
+      auth: true
+      socketFactory:
+      class: javax.net.ssl.SSLSocketFactory
+  # 上传图片大小限制
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size:  100MB
+
+# 配置MybatisPlus
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+# 搜索模式 可选 elasticsearch或mysql
+search:
+  mode: mysql
+
+# 上传模式 可选 oss或local  （/一定不能去掉！！！）
+upload:
+  mode: oss
+  local:
+    # nginx映射本地文件路径，无域名则为 ip:83
+    url: http://你的文件上传子域名/
+    # 本地文件存储路径
+    path: /usr/local/upload/
+  oss:
+    url: http://Bucket域名/
+    endpoint: OSS配置endpoint
+    accessKeyId: OSS配置accessKeyId
+    accessKeySecret: OSS配置accessKeySecret
+    bucketName: OSS配置bucketName
+
+# 网站前台域名（邮件通知用）=>url: http://你的主域名或ip
+website:
+  url: http://你的主域名或ip
+
+# Swagger配置
+swagger:
+  # 是否开启swagger
+  enabled: false
+  # 请求前缀(暂时不用)
+  pathMapping: /dev-api
+
+#第三方授权的配置信息
+wx:
+  # 斜阳技术博客
+  app-id: WX APPID
+  secret: WX secret
+  openid-url: https://api.weixin.qq.com/sns/jscode2session?appid={appid}&secret={secret}&js_code={code}&grant_type=authorization_code
+
+qq:
+  app-id: QQ APPID
+  check-token-url: https://graph.qq.com/oauth2.0/me?access_token={access_token}
+  user-info-url: https://graph.qq.com/user/get_user_info?openid={openid}&access_token={access_token}&oauth_consumer_key={oauth_consumer_key}
+  unique-info-url: https://graph.qq.com/oauth2.0/me?access_token={access_token}&unionid=1
+  qq-unique-info-url: https://api.q.qq.com/sns/jscode2session?appid=你的qq小程序appid&secret=你的qq小程序密钥&js_code={code}&grant_type=authorization_code
+
+weibo:
+  app-id: 微博APPID
+  app-secret: 微博APPSECRET
+  grant-type: authorization_code
+  redirect-url: 微博回调地址
+  access-token-url: https://api.weibo.com/oauth2/access_token
+  user-info-url: https://api.weibo.com/2/users/show.json?uid={uid}&access_token={access_token}
+
+weibo-mobile:
+  app-id: 移动端微博APPID
+  app-secret: 移动端微博APPSECRET
+  grant-type: authorization_code
+  redirect-url: 微博回调地址
+  access-token-url: https://api.weibo.com/oauth2/access_token
+  user-info-url: https://api.weibo.com/2/users/show.json?uid={uid}&access_token={access_token}

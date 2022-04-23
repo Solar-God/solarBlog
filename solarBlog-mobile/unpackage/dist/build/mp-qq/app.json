@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/articleDetail/articleDetail",
+    "pages/mine/index",
+    "pages/mine/chat/chat",
+    "pages/mine/userInfo/userInfo",
+    "pages/mine/author/author",
+    "pages/mixLogin/index",
+    "pages/mixLogin/forget/forget",
+    "pages/mixLogin/register/register",
+    "pages/chatRoom/chatRoom",
+    "pages/wxLogin/wxLogin",
+    "pages/mine/emailModel/emailModel"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "uniapp",
+    "navigationBarBackgroundColor": "#00aaff",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#d81e06",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home-active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "iconPath": "static/tabbar/mine.png",
+        "selectedIconPath": "static/tabbar/mine-active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "uniStatistics": {
+    "enable": false
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "usingComponents": {
+    "fix-2648": "/fix-2648"
+  }
+}

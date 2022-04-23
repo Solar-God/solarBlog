@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "用户登录",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-modal": "/node-modules/uview-ui/components/u-modal/u-modal"
+  }
+}

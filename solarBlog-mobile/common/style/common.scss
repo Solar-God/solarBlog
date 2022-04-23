@@ -1,0 +1,42 @@
+	page,
+	view,
+	scroll-view,
+	text,
+	image,
+	textarea,
+	button,
+	input {
+		box-sizing: border-box;
+	}
+
+	page {
+		background-color: #F1F8FA;
+		height: 100%;
+		width: 100%;
+	}
+	
+	.otherLogin-box {
+		width: 100%;
+		margin-top: 50rpx;
+		.header {
+			width: 100%;
+			text-align: center;
+		}
+		.loginIcon-box{
+			display: flex;
+			justify-content: center;
+			width: 80%;
+			margin: 20rpx auto;
+		}
+		.loginIcon-item {
+			height: 80rpx;
+			line-height: 80rpx;
+			margin: 30rpx;
+			padding: 0;
+			border: none;
+		}
+		image {
+			width: 60rpx;
+			height: 60rpx;
+		}
+	}
