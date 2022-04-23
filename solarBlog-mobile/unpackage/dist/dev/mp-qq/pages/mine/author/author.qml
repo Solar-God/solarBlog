@@ -1,1 +1,0 @@
-<view class="author"><image src="{{qqUrl}}" mode data-event-opts="{{[['tap',[['handlePreView',['$0'],['qqUrl']]]]]}}" bindtap="__e"></image></view>
