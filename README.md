@@ -2,13 +2,17 @@
 
 <p align=center>
   <a href="https://www.solargod.cn">
-    <img src="https://images.solargod.cn/avatar.png" alt="斜阳技术博客" style="border-radius: 50%;width:120px;heigth:120px">
+    <img src="https://images.solargod.cn/avatar.png" alt="东君博客" style="border-radius: 50%;width:120px;heigth:120px">
   </a>
 </p>
+
+
 
 <p align=center>
    基于Springboot + Vue 开发的前后端分离博客(PC端自适应+移动端微信小程序+移动端App)
 </p>
+
+
 
 <p align="center">
    <a target="_blank" href="https://github.com/X1192176811/blog">
@@ -40,7 +44,7 @@
 
 - 移动端：
 
-​		**微信小程序:** 微信搜索斜阳技术博客
+​		**微信小程序:** 微信搜索东君博客
 
 ​		**App:**   [www.solargod.cn/app-download](https://www.solargod.cn/app-download/)
 
