@@ -38,15 +38,15 @@
 
 - PC端：
 
-​		**前台链接：** [www.solargod.cn](https://www.solargod.cn)
+​	**前台链接：** [www.solargod.cn](https://www.solargod.cn)
 
 ​	**后台链接：** [admin.solargod.cn](https://admin.solargod.cn)
 
 - 移动端：
 
-​		**微信小程序:** 微信搜索东君博客
+​	**微信小程序:** 微信搜索东君博客
 
-​		**App:**   [www.solargod.cn/app-download](https://www.solargod.cn/app-download/)
+​	**App:**   [www.solargod.cn/app-download](https://www.solargod.cn/app-download/)
 
 测试账号：test@qq.com，密码：123456，可登入后台查看。
 
@@ -176,11 +176,11 @@ solarBlog-server
 
 详见文章[Linux安装Docker和运行环境](https://www.solargod.cn/articles/73)
 
-详见文章[Docker安装运行环境](https://www.talkxj.com/articles/2)
+详见文章[Docker安装运行环境](https://www.solargod.cn/articles/121)
 
 ### 项目配置及第三方授权申请教程
 
-详见文章[项目配置及第三方授权申请教程](https://www.talkxj.com/articles/3)
+详见文章[项目配置及第三方授权申请教程](https://www.solargod.cn/articles/123)
 
 ### 后端项目部署
 
@@ -192,7 +192,7 @@ solarBlog-server
 
 ### 全站https配置
 
-详见文章[全站https配置教程](https://www.talkxj.com/articles/49)
+详见文章[全站https配置教程](https://www.solargod.cn/articles/122)
 
 ## 注意事项
 
